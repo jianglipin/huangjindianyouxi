@@ -1,0 +1,25 @@
+import random
+ 2 b=int(input("请输入游戏人数：\n"))
+ 3 a=int (input("请输入游戏次数：\n"))
+ 4 mylist=[[0]*b]*a
+ 5 print("\n"*5)
+ 6 for i in range(0,a):
+ 7     mylist_sum=[[]]*a
+ 8     for j in range(0,b):
+ 9         mylist[i][j]=random.randint(0,100)
+10         mylist_sum[i].append (mylist[i][j])
+11     average=sum(mylist_sum[i])/b
+12     G=average*0.68
+13     chalist=[]
+14     for j in range(0,b):
+15         chalist.append(abs(mylist[i][j]-G))
+16     score=[0]*b
+17     print("差值")
+18     print(chalist)
+19     M=chalist.index(max(list(chalist)))
+20     m=chalist.index(min(list(chalist)))
+21     score[m]=-2
+22     score[M]=b
+23     print("本局得分")
+24     print(score)
+25     print("\n"*5)
